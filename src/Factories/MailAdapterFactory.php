@@ -26,7 +26,6 @@ class MailAdapterFactory
         EmailServiceType::POSTMARK => PostmarkMailAdapter::class,
         EmailServiceType::MAILJET => MailjetAdapter::class,
         EmailServiceType::SMTP => SmtpAdapter::class,
-        //todo update this to align with laravel 9
         EmailServiceType::POSTAL => PostalAdapter::class,
     ];
 

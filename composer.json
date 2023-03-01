@@ -52,5 +52,6 @@
                 "Cornatul\\Marketing\\Base\\MarketingPortalBaseServiceProvider"
             ]
         }
-    }
+    },
+    "prefer-stable": false
 }

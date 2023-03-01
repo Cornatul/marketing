@@ -33,5 +33,26 @@
 
         {!! \Cornatul\Marketing\Base\Facades\MarketingPortal::sidebarHtmlContent() !!}
 
+        <?php if(class_exists(\Cornatul\Feeds\FeedsServiceProvider::class)): ?>
+
+        <li class="nav-item {{ request()->is('*feeds*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('feeds.index') }}">
+                <i class="fa-fw fas fa-bug mr-2"></i><span>{{ __('Feeds') }}</span>
+            </a>
+        </li>
+
+        <?php endif; ?>
+
+
+        <?php if(class_exists(\Cornatul\Wordpress\WordpressServiceProvider::class)): ?>
+
+        <li class="nav-item {{ request()->is('*wordpress*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('wordpress.index') }}">
+                <i class="fa-fw fas fa-blog mr-2"></i><span>{{ __('Wordpress') }}</span>
+            </a>
+        </li>
+
+        <?php endif; ?>
+
     </ul>
 </div>

@@ -19,7 +19,7 @@ class MarketingPortalBaseServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot():void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -57,14 +57,17 @@ class MarketingPortalBaseServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register():void
     {
         // Providers.
         $this->app->register(MarketingPortalAppServiceProvider::class);
 
         $this->app->register(EventServiceProvider::class);
+
         $this->app->register(FormServiceProvider::class);
+
         $this->app->register(RouteServiceProvider::class);
+
         $this->app->register(ResolverProvider::class);
 
         // Facade.
